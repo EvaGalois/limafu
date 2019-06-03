@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>立马付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body, div, p, span, ul, dl, ol, h1, h2, h3, h4, h5, h6, table, td, tr {
+            padding: 0;
+            margin: 0
+        }
+
+        .content {
+            width: 400px;
+            margin: 100px auto;
+            border: 1px solid #ddd
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            background-color: #eee;;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: center
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto
+        }
+
+        table tr td {
+            height: 40px;
+            font-size: 14px
+        }
+
+        input, select {
+            width: 100%;
+            line-height: 25px
+        }
+
+        button {
+            font-size: 16px
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h1>立马付</h1>
+    <span><a href="index.html">金额输入框页</a></span>
+    <span><a href="pay.html">金额下拉框页</a></span>
+    <form action="pay.php" method="post" name="form" target="_blank">
+        <table>
+            <tr>
+                <td>订单金额：</td>
+                <td>
+                    <select type="text" id="select" name="money">
+                        <option value="100">100</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="5000">5000</option>
+                        <option value="10000">10000</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>支付编号：</td>
+                <td>
+                    <select name="paytype" onChange="changePay(this.options[this.selectedIndex].value)">
+                        <option value="ZFB">支付宝扫码</option>
+                        <option value="ZFBH5">支付宝wap</option>
+                        <option value="WX">微信扫码</option>
+                        <option value="WXH5">微信wap</option>
+                        <option value="YSF">云闪付</option>
+                        <option value="YLHET">银联扫码</option>
+                        <option value="TLNETH5">银联扫码wap</option>
+                        <option value="NETGATE">网银支付</option>
+                        <option value="QQ">QQ扫码</option>
+                        <option value="QQH5">QQ扫码wap</option>
+                        <option value="BAIDU">百度钱包</option>
+                        <option value="BAIDUH5">百度钱包wap</option>
+                        <option value="JD">京东支付</option>
+                        <option value="JDH5">京东支付wap</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <!--<td>订单备注：</td>-->
+                <td><input type="hidden" name="remark" value="金额下拉框页的测试"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">提交测试</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+
+</script>
+</body>
+</html>
